@@ -74,6 +74,16 @@ MyString::MyString(MyString&& other)
     other.data = nullptr;
 }
 
+char MyString::operator[](unsigned short i)
+{
+    return data[i];
+}
+
+int MyString::Lenght()
+{
+    return length;
+}
+
 MyString MyString::operator+(const MyString& other)
 {   
     MyString new_str = new char[length + other.length + 1];
@@ -97,9 +107,9 @@ MyString MyString::operator+(const MyString& other)
 
 istream& operator>>(istream& in, MyString& other)
 {
-    char str[256] = {0};
+    char str[500] = {0};
 
-    in.getline(str, 256);
+    in.getline(str, 500);
 
     other.length = strlen(str);
     other.data = new char[other.length + 1];
