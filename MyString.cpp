@@ -74,7 +74,7 @@ MyString::MyString(MyString&& other)
     other.data = nullptr;
 }
 
-char MyString::operator[](unsigned short i)
+char& MyString::operator[](unsigned short i)
 {
     return data[i];
 }

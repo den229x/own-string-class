@@ -22,7 +22,7 @@ public:
     MyString& operator=(const MyString&);
     MyString& operator=(MyString&&);
     MyString  operator+(const MyString&);
-    char operator[](unsigned short);
+    char& operator[](unsigned short);
 
     friend istream& operator>>(istream&, MyString&);
     friend ostream& operator<<(ostream&, const MyString&);
